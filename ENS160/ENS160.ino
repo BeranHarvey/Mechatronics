@@ -171,7 +171,7 @@ void loop() {
   display.print("Soil Moisture: "); display.print(soilMoistPercent); display.println(" %");
   display.print("AQI: "); display.println(aqi);
   display.print("TVOC: "); display.print(tvoc); display.println(" ppm");
-  display.print("CO2: "); display.print(eco2); display.println( "ppm");
+  display.print("CO2: "); display.print(eco2); display.println( " ppm");
   display.display();
 
   myFile.flush();
