@@ -1,4 +1,4 @@
-///// libraries
+// libraries
 #include <Wire.h>
 #include <SD.h>
 #include <Adafruit_AHTX0.h>
@@ -6,38 +6,38 @@
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 
-///// ENS160 + AHT variables
+// ENS160 + AHT variables
 ScioSense_ENS160 ens160(ENS160_I2CADDR_1);
 Adafruit_AHTX0 aht;
 int tempC;
 int tempF;
 int humidity;
 
-///// soil moisture - I calibrated the values in air and pure water
+// soil moisture - I calibrated the values in air and pure water
 const int valAir = 785;
 const int valWater = 400;
 
-///// time variables
+// time variables
 unsigned long lastLogTime = 0;
 const unsigned long LOG_INTERVAL = 300000; // 5 minutes (Change to 10 secs when testing)
 unsigned int timestampmins = 0;
 
-///// file variable
+// file variable
 File myFile;
 
-///// OLED display variables
+// OLED display variables
 #define SCREEN_WIDTH 128
 #define SCREEN_HEIGHT 64
 #define OLED_RESET -1
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
-///// start setup
+// start setup
 void setup() {
   Serial.begin(9600);
 
   while (!Serial) {}
 
-  ///// Set Up SD Card Start
+  // Set Up SD Card Start
   #define PIN_SPI_CS 53
 
   if (!SD.begin(PIN_SPI_CS)) {
@@ -99,7 +99,7 @@ void setup() {
   display.clearDisplay();
 } //end setup
 
-///// Main Loop - cycle every 5 mins and perform measurment
+// Main Loop - cycle every 5 mins and perform measurment
 void loop() {
   if (millis() - lastLogTime < LOG_INTERVAL) {
     return;  // not time yet
