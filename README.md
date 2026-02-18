@@ -2,7 +2,7 @@
 
 ## Arduino Code
 
-This section of code writtern by myself forms a part of a larger Mechatronics group project. It is only for the Arduino Mega 2560 and is to be run alongside separate code from the ESP32 which is where the local LLM is hooked up with.  
+This section of code written by myself forms a part of a larger Mechatronics group project. It is only for the Arduino Mega 2560 and is to be run alongside separate code from the ESP32 which is where the local LLM is hooked up with.  
 
 This code runs by itself and its purpose is to display real-time data on an OLED display and to log data for 24 hours to an external SD card where the data can then be given to the LLM model to analysis the data.
 
